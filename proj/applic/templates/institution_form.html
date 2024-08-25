@@ -1,0 +1,131 @@
+{% extends 'layouts/main.html' %}
+{% block title %}
+AICTE Innovators
+{% endblock title %}
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Institution Form</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            
+            <fieldset class="mb-4">
+                <legend>Institution: Basic Details</legend>
+                <div class="mb-3">
+                    {{ form.current_application_number.label_tag }}
+                    {{ form.current_application_number }}
+                </div>
+                <div class="mb-3">
+                    {{ form.academic_year.label_tag }}
+                    {{ form.academic_year }}
+                </div>
+                <div class="mb-3">
+                    {{ form.application_opened_date.label_tag }}
+                    {{ form.application_opened_date }}
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-4">
+                <legend>Contact Person/Registrar Details</legend>
+                <div class="mb-3">
+                    {{ form.title.label_tag }}
+                    {{ form.title }}
+                </div>
+                <div class="mb-3">
+                    {{ form.first_name.label_tag }}
+                    {{ form.first_name }}
+                </div>
+                <div class="mb-3">
+                    {{ form.middle_name.label_tag }}
+                    {{ form.middle_name }}
+                </div>
+                <div class="mb-3">
+                    {{ form.last_name.label_tag }}
+                    {{ form.last_name }}
+                </div>
+                <div class="mb-3">
+                    {{ form.address.label_tag }}
+                    {{ form.address }}
+                </div>
+                <div class="mb-3">
+                    {{ form.designation.label_tag }}
+                    {{ form.designation }}
+                </div>
+                <div class="mb-3">
+                    {{ form.state.label_tag }}
+                    {{ form.state }}
+                </div>
+                <div class="mb-3">
+                    {{ form.town_city_village.label_tag }}
+                    {{ form.town_city_village }}
+                </div>
+                <div class="mb-3">
+                    {{ form.postalcode.label_tag }}
+                    {{ form.postalcode }}
+                </div>
+                <div class="mb-3">
+                    {{ form.stdcode.label_tag }}
+                    {{ form.stdcode }}
+                </div>
+                <div class="mb-3">
+                    {{ form.landline_number.label_tag }}
+                    {{ form.landline_number }}
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-4">
+                <legend>Questionnaire Details</legend>
+                <div class="mb-3">
+                    {{ form.apply_new_odl.label_tag }}
+                    {{ form.apply_new_odl }}
+                </div>
+                <div class="mb-3">
+                    {{ form.parent_application_id.label_tag }}
+                    {{ form.parent_application_id }}
+                </div>
+                <div class="mb-3">
+                    {{ form.existing_running_institute.label_tag }}
+                    {{ form.existing_running_institute }}
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-4">
+                <legend>Infrastructure and Library Count</legend>
+                <div class="mb-3">
+                    {{ form.land_details.label_tag }}
+                    {{ form.land_details }}
+                </div>
+                <div class="mb-3">
+                    {{ form.building_details.label_tag }}
+                    {{ form.building_details }}
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-4">
+                <legend>Calculation of TER Charges</legend>
+                <div class="mb-3">
+                    {{ form.total_ter_charges.label_tag }}
+                    {{ form.total_ter_charges }}
+                </div>
+                <div class="mb-3">
+                    {{ form.total_amount_paid.label_tag }}
+                    {{ form.total_amount_paid }}
+                </div>
+                <div class="mb-3">
+                    {{ form.late_fee.label_tag }}
+                    {{ form.late_fee }}
+                </div>
+                <div class="mb-3">
+                    {{ form.balance_amount_to_be_paid.label_tag }}
+                    {{ form.balance_amount_to_be_paid }}
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form><br>
+        <a href="{% url 'upload_documents'  %}" class="btn btn-primary">upload document</a>
+    </div>
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    {% endblock content %}

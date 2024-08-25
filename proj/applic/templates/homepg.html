@@ -1,0 +1,84 @@
+{% extends 'layouts/main.html' %}
+{% block title %}
+AICTE Innovators
+{% endblock title %}
+{% block content %}
+
+    
+
+    <!-- Navigation Bar -->
+    <div class="container content-section">
+        <div class="row">
+            <!-- Quick Links -->
+            <div class="col-md-3 quick-links">
+                <h5>Quick Links</h5>
+                <ul>
+                    <li><a href="#">Approval Process 2024-25</a></li>
+                    <li><a href="#">Information Facilitation Centre</a></li>
+                    <li><a href="#">Vidyanjali-HE</a></li>
+                    <li><a href="#">eKUMBH Portal</a></li>
+                    <li><a href="#">AICTE Internship Portal</a></li>
+                    <li><a href="#" class="text-danger">AICTE-AI Language Translation Tool</a></li>
+                    <li><a href="#">ATAL Academy</a></li>
+                    <li><a href="#">SSS J&K and Ladakh</a></li>
+                    <li><a href="#">Policies & Reforms</a></li>
+                    <li><a href="#">FDP-SI Web Portal</a></li>
+                    <li><a href="#">AICTE Connect Magazines</a></li>
+                </ul>
+                <button class="btn btn-primary btn-sm">+ More</button>
+            </div>
+
+    
+
+    
+
+            <!-- Welcome Section -->
+            <div class="col-md-6 welcome-section">
+                <h2>Welcome to AICTE</h2>
+                <p>All India Council for Technical</p>
+                <h2>APPLY FOR APPROVAL 2024-2025</h2>
+                <p>Apply here:</p>
+                <a href="{% url 'institution_form_view'  %}" class="btn btn-primary">Central Approvals</a>
+                <a href="{% url 'institution_form_view'  %}" class="btn btn-primary">State Approvals</a>
+                
+                </div>
+                 <div class="container">
+        <!-- Header Section -->
+        <div class="header-text">
+            Technical education in India contributes a major share to the overall education system and plays a vital role in the social and economic development of our nation.
+        </div>
+
+        <!-- Organisation Section -->
+        <div class="content-section">
+            <h2 class="section-heading">The Organisation</h2>
+            <div class="row section-content">
+                <div class="col-md-6">
+                    <p>In accordance with the provisions of the AICTE Act (1987), for the first five years after its inception in 1988, the Minister for Human Resource Development, the Government of India, was the Chairman of the Council. The first full-time Chairman was appointed on July 2, 1993 and the Council was reconstituted in March 1994 with a term of three years. The Executive Committee was reconstituted on July 7, 1994 and All India Board of Studies and Advisory Boards were constituted in 1994-95. Regional Offices of the Ministry of Human Resource Development, the Government of India, located in Kolkata, Chennai, Kanpur, and Mumbai were transferred to AICTE and the staff working in these offices were also deputed to the Council on foreign service terms w.e.f. October 1, 1995.</p>
+                </div>
+                <div class="col-md-6">
+                    <p>These offices functioned as secretariats of regional Committees in the four regions (North, East, West, and South). Three new regional Committees in southwest, central, and northwest regions with their secretariats located in Bangalore, Bhopal, and Chandigarh, respectively, were also established on July 27, 1994. One more regional committee in the South-Central region with its Secretariat in Hyderabad was notified on March 8, 2007.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objectives Section -->
+        <div class="objectives-section">
+            <h2 class="section-heading">Our Objectives</h2>
+            <div class="row">
+                <div class="col-md-4 objective">
+                    <h5>Promotion of Quality in Technical Education.</h5>
+                </div>
+                <div class="col-md-4 objective">
+                    <h5>Planning and Coordinated Development of Technical Education System.</h5>
+                </div>
+                <div class="col-md-4 objective">
+                    <h5>Regulations and Maintenance of Norms and Standards.</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    {% endblock content %}

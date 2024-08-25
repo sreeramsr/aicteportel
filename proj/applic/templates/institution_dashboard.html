@@ -1,0 +1,42 @@
+{% extends 'layouts/main.html' %}
+{% block title %}
+AICTE Innovators
+{% endblock title %}
+{% block content %}
+    <div class="container mt-5">
+        <h2>Institution Dashboard</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Application Number</th>
+                    <th>Academic Year</th>
+                    <th>Contact Person</th>
+                    <th>Designation</th>
+                    <th>State</th>
+                    <th>Town/City/Village</th>
+                    <th>Total TER Charges</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for institution in institutions %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ institution.current_application_number }}</td>
+                    <td>{{ institution.academic_year }}</td>
+                    <td>{{ institution.title }} {{ institution.first_name }} {{ institution.last_name }}</td>
+                    <td>{{ institution.designation }}</td>
+                    <td>{{ institution.state }}</td>
+                    <td>{{ institution.town_city_village }}</td>
+                    <td>{{ institution.total_ter_charges }}</td>
+                    <td>
+                        <a href="{% url 'institution_detail' institution.id %}" class="btn btn-info btn-sm">View</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% endblock content %}

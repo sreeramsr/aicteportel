@@ -1,0 +1,58 @@
+{% extends 'layouts/main.html' %}
+{% block title %}
+AICTE Innovators
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <h1>Uploaded Documents</h1>
+        {% if documents %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Document Type</th>
+                        <th>File</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for document in documents %}
+                        <tr>
+                            <td>Building Plan Approval</td>
+                            <td>
+                                {% if document.building_plan_approval %}
+                                    <a href="{{ document.building_plan_approval.url }}" target="_blank">View PDF</a>
+                                {% else %}
+                                    Not Uploaded
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Occupancy Certificate</td>
+                            <td>
+                                {% if document.occupancy_certificate %}
+                                    <a href="{{ document.occupancy_certificate.url }}" target="_blank">View PDF</a>
+                                {% else %}
+                                    Not Uploaded
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <!-- Add other document types similarly -->
+                        <!-- Example for title_document -->
+                        <tr>
+                            <td>Title Document</td>
+                            <td>
+                                {% if document.title_document %}
+                                    <a href="{{ document.title_document.url }}" target="_blank">View PDF</a>
+                                {% else %}
+                                    Not Uploaded
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <!-- Continue for remaining document fields -->
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No documents uploaded.</p>
+        {% endif %}
+    </div>
+    {% endblock content %}

@@ -1,0 +1,48 @@
+{% extends 'layouts/main.html' %}
+{% block title %}
+AICTE Innovators
+{% endblock title %}
+{% block content %}
+    <div class="container mt-5">
+        <h2>Institution Details</h2>
+        <table class="table table-bordered">
+            <tr>
+                <th>Application Number</th>
+                <td>{{ institution.current_application_number }}</td>
+            </tr>
+            <tr>
+                <th>Academic Year</th>
+                <td>{{ institution.academic_year }}</td>
+            </tr>
+            <tr>
+                <th>Contact Person</th>
+                <td>{{ institution.title }} {{ institution.first_name }} {{ institution.middle_name }} {{ institution.last_name }}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{ institution.designation }}</td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td>{{ institution.state }}</td>
+            </tr>
+            <tr>
+                <th>Town/City/Village</th>
+                <td>{{ institution.town_city_village }}</td>
+            </tr>
+            <tr>
+                <th>Total TER Charges</th>
+                <td>{{ institution.total_ter_charges }}</td>
+            </tr>
+            <!-- Add more fields as necessary -->
+        </table>
+        
+       <div class="progress-bar bg-success" style="width: 25%"></div><br>
+       <a href="{% url 'dashboardfile' %}" class="btn btn-primary">view Documents</a>
+  
+
+        
+        <a href="{% url 'institution_dashboard' %}" class="btn btn-primary">Back to Dashboard</a>
+    </div>
+<br><br>
+    {% endblock content %}
